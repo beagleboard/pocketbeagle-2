@@ -10,3 +10,4 @@
 * Type-C USB (HS, dual-role, HDMI) - must support Type-C monitor like https://www.asus.com/us/Displays-Desktops/Monitors/ZenScreen/ZenScreen-Go-MB16AHP/
 * 2-channel ADC like BeaglePlay
 * CC3300?
+* TAG-CONNECT JTAG
