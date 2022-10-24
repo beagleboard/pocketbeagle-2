@@ -10,6 +10,7 @@
 * 4GB eMMC or greater
 * 8-channel 3.3V ADC
 * TAG-CONNECT JTAG
+* Battery charger
 
 ## Wishlist 
 * OLDI->HDMI (use something like IT6263)
