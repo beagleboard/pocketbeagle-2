@@ -8,11 +8,8 @@
 * PMIC or discrete
 * 512MB DDR or greater
 * 4GB eMMC or greater
+* uSD card cage
 * 8-channel 3.3V ADC
 * TAG-CONNECT JTAG
 * Battery charger
 
-## Wishlist 
-* OLDI->HDMI (use something like IT6263)
-* Type-C USB (HS, dual-role, HDMI) - must support Type-C monitor like https://www.asus.com/us/Displays-Desktops/Monitors/ZenScreen/ZenScreen-Go-MB16AHP/
-* CC3300?
