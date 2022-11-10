@@ -11,5 +11,6 @@
 * uSD card cage
 * 8-channel 3.3V ADC
 * TAG-CONNECT JTAG
-* Battery charger
-
+* Battery charger (1-cell LiPo)
+* ID EEPROM
+* Power via USB, header ("AC"), or battery via header
