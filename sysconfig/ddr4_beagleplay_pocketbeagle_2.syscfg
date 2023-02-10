@@ -1,0 +1,20 @@
+/**
+ * These arguments were used when this file was generated. They will be automatically applied on subsequent loads
+ * via the GUI or CLI. Run CLI with '--help' for additional information on how to override these arguments.
+ * @cliArgs --device "AM62x" --package "AMC" --part "Default" --product "Processor_DDR_Config@0.09.06"
+ * @versions {"tool":"1.15.0+2826"}
+ */
+
+/**
+ * Import the modules used in this configuration.
+ */
+const DDRSS = scripting.addModule("/DDRSS");
+
+/**
+ * Write custom configuration values to the imported modules.
+ */
+DDRSS.ddr4.$name                         = "ddr4_DDRSS_DDR40";
+DDRSS.ddr4.config_dram_tDLLK_tCK         = 1024;
+DDRSS.ddr4.config_dram_tWR_CRC_DM_tCK    = 5;
+DDRSS.ddr4.config_dram_tWTR_S_CRC_DM_tCK = 5;
+DDRSS.ddr4.config_dram_tCCD_L_tCK        = 5;
