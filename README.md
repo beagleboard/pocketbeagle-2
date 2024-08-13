@@ -1,5 +1,15 @@
 # PocketBeagle 2
 
+Rev 0.7
+
+| Top           |  Bottom |
+| :-------------------------: | :-------------------------: |
+| ![](images/top.png)  | ![](images/bottom.png)|
+
+| Front | Back   | Right  | Left   |
+| :---- | :----: | :----: | :----: |
+| ![](images/front.png) | ![](images/back.png) | ![](images/right.png) | ![](images/left.png) 
+
 ## Required
 * Same outline as PocketBeagle, but with USB Type-C
 * SMD/through-hole connector combo like BeagleBone AI-64, but reduced size for headers facing down with [similar pin functions](https://docs.beagleboard.io/latest/boards/pocketbeagle/original/ch07.html)
