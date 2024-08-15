@@ -12,7 +12,7 @@ Rev 0.7
 
 ## Required
 * Same outline as PocketBeagle, but with USB Type-C
-* SMD/through-hole connector combo like BeagleBone AI-64, but reduced size for headers facing down with [similar pin functions](https://docs.beagleboard.io/latest/boards/pocketbeagle/original/ch07.html)
+* SMD/through-hole connector combo like BeagleBone AI-64, but reduced size for headers facing down with [similar pin functions](https://docs.beagleboard.io/latest/boards/pocketbeagle/ch07.html)
 * GPIO on all ADC signals
 * AM62x
 * PMIC or discrete
