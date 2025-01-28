@@ -1,7 +1,7 @@
 # PocketBeagle 2
 
 PocketBeagle2 is based on [Texas Instrments AM6232 SoC](https://www.ti.com/product/AM623), it's dual A53 cores can 
-provides more than double the performance of the classic PocketBeagle. The new design comes with pre-soldered headers, 
+provides better performance than the classic PocketBeagle. The new design comes with pre-soldered headers, 
 3-pin JST-SH 1.00mm uart debug port, USB-C port, MSPM0L1105, 512MB RAM, LiPo Battery charger, and optional eMMC storage.
 
 ![](images/hero.jpg)
@@ -10,7 +10,7 @@ provides more than double the performance of the classic PocketBeagle. The new d
 
 | Front           |  Back |
 | :-------------------------: | :-------------------------: |
-| ![](images/front.png)  | ![](images/back.png)| 
+| ![](images/front.jpg)  | ![](images/back.jpg)| 
 
 ## Comparison table
 
@@ -18,7 +18,7 @@ provides more than double the performance of the classic PocketBeagle. The new d
 | :---------------: | :-----------------: | :------------------------: |
 | SoC               | AM6232              | AM3358                     |
 | Arm CPU           | Cortex-A53 (64-bit) | Cortex-A8 (32-bit)         |
-| Arm cores         | 2 x 1.4GHz          | 1 x 1GHz                   |
+| Arm cores         | 2 x 1 GHz           | 1 x 1GHz                   |
 | RAM               | 512MB DDR4          | 512MB DDR3                 |
 
 ## PocketBeagle2 Features and Specification
@@ -26,8 +26,7 @@ provides more than double the performance of the classic PocketBeagle. The new d
 |                         | Feature                                                                                                                                 |
 | :---------------------: | :-------------------------------------------------------------------------------------------------------------------------------------: |
 | **Processor**           | [Texas Instrments AM6232 SoC](https://www.ti.com/product/AM623)                                                                         |
-| **SDRAM Memory**        | LPDDR4 3200MHz (512MB) Kingston D2516AN9EXGXN-TU                                                                                        |
-| **Onboard Flash**       | eMMC (2GB) Kingston EMMC04G-MT32-01G10                                                                                                  |
+| **SDRAM Memory**        | 512MB DDR4 (Kingston D2516AN9EXGXN-TU)                                                                                                  |
 | **PMIC**                | TPS6521903                                                                                                                              |
 | **Debug Support**       | 3 pin 3.3V JST-SH 1.00mm UART debug port (RPI debug probe compatible)                                                                   |
 |                         | 10-pin JTAG TAG-CONNECT footprint                                                                                                       |
