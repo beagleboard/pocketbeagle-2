@@ -1,0 +1,13 @@
+= PocketBeagle® 2
+BeagleBoard.org Foundation
+:page-role: board-index
+
+PocketBeagle 2 is an upgraded version of the widely popular PocketBeagle, designed as an 
+ultra-compact, low-cost, and powerful single-board computer (SBC). Targeted at developers, 
+students, and hobbyists, PocketBeagle 2 retains the simplicity and flexibility of its predecessor 
+while delivering enhanced performance and expanded features to support modern development needs. 
+PocketBeagle 2 is ideal for creating IoT devices, robotics projects, and educational applications. 
+Its small form factor and low power consumption make it a versatile platform for embedded 
+development, whether prototyping or deploying at scale.
+
+image::hero.webp[PocketBeagle 2,780,align="center"]

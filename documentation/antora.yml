@@ -1,0 +1,14 @@
+name: pocketbeagle-2
+version: true
+title: 'PocketBeagle® 2: Next-gen pocket-size single-board computer!'
+nav:
+- modules/ROOT/nav.adoc
+
+asciidoc:
+  attributes:
+    description: >
+      Tiny board with quad A53 cores, M4, PRUs and lots of I/O. Higher performance than original PocketBeagle
+      with pre-soldered headers, UART debug port, high-speed USB-C port, MSPM0L1105, 512MB RAM, and LiPo Battery
+      charger.
+    oshw: US002717
+    title-logo-image: image::logo.webp[]
