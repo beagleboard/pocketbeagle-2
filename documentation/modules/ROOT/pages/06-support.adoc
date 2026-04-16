@@ -1,0 +1,71 @@
+= Support
+
+== Additional Support Information
+
+All support for this design is through BeagleBoard.org community at https://forum.beagleboard.org/tag/pocketbeagle-2[BeagleBoard.org forum].
+
+== Certifications and export control
+
+=== Export designations
+
+* ECCN: 3A991.a
+* HSCODE: 8517180050
+* USHSCODE: 8543708800
+* EUHSCODE: 8543709099
+* UPC number: 841454123484
+
+== Hardware Design
+
+You can find all PocketBeagle 2 hardware files https://openbeagle.org/pocketbeagle/pocketbeagle-2[here] under the `design` folder.
+
+== Production board boot media
+
+// TODO: Add production image link with board revision information.
+
+== Software Updates
+
+Follow instructions below to download the latest image for your PocketBeagle 2:
+
+. Go to https://www.beagleboard.org/distros[BeagleBoard.org distro] page.
+. On distros page, from dropdown select "PocketBeagle 2" and download the image.
+
+// TODO: add distros page image selection for pocketbeagle-2
+
+[TIP]
+====
+You can follow the `flash-latest-image` guide for more information on flashing the downloaded image to your board.
+====
+
+To see what SW revision is loaded into the running software image, check `/etc/dogtag`. It should look something like as shown in example below,
+
+[source,shell]
+----
+root@BeagleBone:~# cat /etc/dogtag
+BeagleBoard.org Debian Image 2024-02-24
+----
+
+== RMA Support
+
+If you feel your board is defective or has issues, request an Return Merchandise Application (RMA) by filling out the form at http://beagleboard.org/support/rma . You will need the serial number and revision of the board. The serial numbers and revisions keep moving. Different boards can have different locations depending on when they were made. The following figures show the three locations of the serial and revision number.
+
+== Getting Help
+
+If you need some up to date troubleshooting techniques, you can post your queries on link: https://forum.beagleboard.org/tag/pocketbeagle-2[BeagleBoard.org forum]
+
+== Mechanical Details
+
+=== Dimensions and Weight
+
+.Dimensions & weight
+[cols="30%,70%",options="header"]
+|===
+|Parameter |Value
+|Size |56 x 35mm
+|Max heigh |13.6
+|PCB Size |55 x 35mm
+|PCB Layers |10--layers
+|PCB Thickness |1.6mm
+|RoHS compliant |Yes
+|Net Weight |12.7g
+|Gross Weight |19g
+|===

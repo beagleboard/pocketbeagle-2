@@ -4,13 +4,13 @@ PocketBeagle 2 is based on [Texas Instrments AM6254 SoC](https://www.ti.com/prod
 provides better performance than the original PocketBeagle. The new design comes with pre-soldered headers, 
 3-pin JST-SH 1.00mm uart debug port, USB-C port, MSPM0L1105, 512MB RAM, LiPo Battery charger, and optional eMMC storage.
 
-![](images/hero.jpg)
+![](documentation/modules/ROOT/images/hero.webp)
 
 ## Component location - Rev A
 
-| Front                       |  Back                       |
-| :-------------------------: | :-------------------------: |
-| ![](images/front.jpg)       | ![](images/back.jpg)        | 
+| Front                                                        |  Back                                                       |
+| :----------------------------------------------------------: | :---------------------------------------------------------: |
+| ![](documentation/modules/ROOT/images/components/front.webp) | ![](documentation/modules/ROOT/images/components/back.webp) | 
 
 ## Comparison table
 

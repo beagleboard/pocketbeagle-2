@@ -1,0 +1,11 @@
+asciidoc:
+  attributes:
+    toc: ''
+    sectnums: true
+    source-highlighter: rouge
+
+assembly:
+  section_merge_strategy: enclose
+
+build:
+  command: asciidoctor-pdf -a optimize

@@ -1,0 +1,299 @@
+= Quick Start Guide
+
+This section provides instructions on how to hook up your board. This Beagle requires a 5V @ 1A (5W) power supply to work properly via either USB Type-C power adapter or via cape header pins.
+
+Recommended adapters can be found at `+accessories-power-supplies+` section.
+
+== What’s In the Box
+
+In the box you will find two main items,
+
+* https://www.beagleboard.org/boards/pocketbeagle-2[PocketBeagle 2]
+* Instruction card
+
+[NOTE]
+====
+A USB-C to USB-C / USB-A to USB-C cable is not included, but recommended for the tethered scenario and creates a developer experience where the board can be used immediately with no other equipment needed.
+====
+
+[TIP]
+====
+For board files, 3D model, and more, you can checkout https://openbeagle.org/pocketbeagle/pocketbeagle-2[PocketBeagle 2 repository on OpenBeagle].
+====
+
+Add picture of PocketBeagle 2 box content
+
+== Creating bootable microSD card
+
+To get started with creating a bootable microSD card, you need folloiwing items,
+
+. Up to date https://beagleboard.github.io/bb-imager-rs/[bb-imager-rs]
+. microSD card (8GB or larger)
+
+[TIP]
+====
+If required you can manually download the image from https://www.beagleboard.org/distros/[beagleboard.org distros page], for example, https://www.beagleboard.org/distros/pocketbeagle2-debian-12-9-2025-01-15-minimal
+
+.Distros selection
+image::distro/pocketbeagle-2-distro-selection.webp[]
+====
+
+To begin you have to select PocketBeagle 2 from the list of boards, then select the image you want to flash, and finally select the microSD card. After doing this you have to select the config button to configure the image and then click on the flash button to start the flashing process.
+
+.Board and image selection
+image::distro/bb-imager-selection.webp[]
+
+Below image shows the configuration options available for the image.
+
+[TIP]
+====
+You can enable Skip `+Verification+` as shown in the image below, which will make the flashing process faster by skipping the verification step.
+====
+
+.Configuration options
+image::distro/bb-imager-config.webp[]
+
+Make sure to select the correct microSD card and click on the flash button to start the flashing process.
+
+.Flashing in progress
+image::distro/bb-imager-flashing.webp[]
+
+Once the flashing is done, you will see the following screen.
+
+.Flashing done
+image::distro/bb-imager-flashing-done.webp[]
+
+Your microSD card is now ready to boot PocketBeagle 2.
+
+== Main Connection Scenarios
+
+This section describes how to connect and power the board and serves as a slightly more detailed description of the quick start guide included in the box. The board can be configured in several different ways, but we will discuss the two most common scenarios.
+
+. Directly tethered to a PC via pocketbeagle 2 USB-C port.
+. With https://www.beagleboard.org/boards/techlab[TechLab Cape] or https://www.beagleboard.org/boards/pocketbeagle-gamepup-cape[GamePup Cape] for sensors, USB host, LEDs and Buttons.
+
+=== Tethered Connection
+
+In this scenario, the board is directly connected to a PC via USB-C port. This is the simplest way to get started with the board. Optionally you can connect rpi debug probe to 3-pin JST-SH connector to see boot log, board console access and for general debugging.
+
+.Tethered Connection
+image::connection-diagrams/tethered-connection.webp[]
+
+==== USB connection
+
+. Connect the USB-C cable to the PocketBeagle 2 and the other end to the PC.
+. The board will power up and boot from the microSD card.
+. The board will show up as a USB device on the PC.
+. You can access the board via `+SSH+` or board `+serial+` connection or though `+Visial Studio Code Server+` web interface.
+
+.. tab-item:: Visial Studio Code Server
+
+After connecting the board to the PC, you can access the board via a web browser by entering the IP address of the board in the address bar.
+
+[source,text]
+----
+https://192.168.7.2:3000/
+----
+
+.Visual Studio Code Server
+image::misc/vscode-server.webp[]
+
+SSH
+
+After connecting the board to the PC, you can access the board via SSH executing the following command in your terminal.
+
+[source,bash]
+----
+ssh <username>@192.168.7.2
+----
+
+Where `+<username>+` is the username you selected during the microSD card flashing process.
+
+[source,shell session]
+----
+The authenticity of host '192.168.7.2 (192.168.7.2)' can't be established.
+ED25519 key fingerprint is SHA256:BL26wv2hm1E6yaqe6VD2+E3Zh21kq9hWNbLHpQxcF5c.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])}? yes
+Warning: Permanently added '192.168.7.2' (€D25519) to the List of known hosts.
+Debian GNU/Linux 12
+
+BeagleBoard.org Debian Bookworm Minimal Image 2025-02-13
+Support: https://bbb. io/debian
+default username is [pocketbeagle-2]
+
+pocketbeagle-2@0192.168.7.2's password:
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Sat Mar 8 09:58:13 2025
+pocketbeagle-2@BeagleBone:~$
+----
+
+Serial
+
+PocketBeagle 2 has a built-in UART debug connection. You can connect to the board console using a serial console application (e.g. Putty) on the PC just like your would connection using any external UART debug probe
+
+If PocketBeagle 2 is the old device connected with UART, on linux you can use [.title-ref]#tio# utility, replace `+ttyACMx+` with the actual device name.
+
+[source,bash]
+----
+tio /dev/ttyACMx
+----
+
+Here is sample output:
+
+[source,bash]
+----
+[16:35:29.080] tio dddb5a9-dirty
+[16:35:29.080] Press ctrl-t q to quit
+[16:35:29.081] Connected to /dev/ttyACM1
+Login incorrect
+
+BeagleBone login:
+
+Password:
+
+Login timed out after 60 seconds.
+
+Debian GNU/Linux 12 BeagleBone ttyGS0
+BeagleBoard.org Debian Bookworm Minimal Image 2025-02-13
+Support: https://bbb. io/debian
+
+default username is [pocketbeagle-2]
+BeagleBone login: 
+----
+
+Once you have access to the console using any of the methods above, you might want to share interne connection with the board. You can do this by running `+pb2-internet.sh+` file on your PocketBeagle 2 board. and the follow OS specific steps to share internet connection.
+
+First you have to create `+pb2-internet.sh+` file on PocketBeagle 2 with the following content,
+
+[source,bash]
+----
+#!/bin/sh -e
+
+if ! id | grep -q root; then
+        echo "must be run as root"
+        exit
+fi
+
+if [ -f /etc/default/bb-boot ] ; then
+        . /etc/default/bb-boot
+fi
+
+if [ "x${USB_CONFIGURATION}" = "x" ] ; then
+        USB0_SUBNET=192.168.7
+        DNS_NAMESERVER=8.8.8.8
+fi
+
+/sbin/route add default gw ${USB0_SUBNET}.1 || true
+
+ping -c1 ${DNS_NAMESERVER}
+echo "nameserver ${DNS_NAMESERVER}" >> /etc/resolv.conf
+----
+
+then execute following commands,
+
+[source,bash]
+----
+chmod +x pb2-internet.sh
+sudo ./pb2-internet.sh
+----
+
+On PC you have to follow OS specific steps to share internet connection with the board.
+
+Linux
+
+First you have to identify your WiFi interface name and PocketBeagle 2 Ethernet interface name using following command,
+
+[source,bash]
+----
+ip a
+----
+
+If you have your WiFi connected to router and PB2 connected to one of the USB the you should see four interfaces listed
+
+* 1: lo
+* 2: wlp0s20f3
+* 3: enp0s20f0u2
+* 4: enp0s20f0u2i2
+
+Out of which `+wlp0s20f3+` is the WiFi interface and `+enp0s20f0u2+` is the PocketBeagle 2 Ethernet interface.
+
+Once you know the interface names, you have to create `+pc-internet.sh+` file on PC with the following content,
+
+[source,bash]
+----
+sudo sysctl net.ipv4.ip_forward=1
+sudo iptables --table nat --append POSTROUTING --out-interface wlp0s20f3 -j MASQUERADE
+sudo iptables --append FORWARD --in-interface enp0s20f0u1 -j ACCEPT
+----
+
+make sure to update line 2 and 3 with your WiFi and PocketBeagle 2 Ethernet interface names. Then execute following commands,
+
+[source,bash]
+----
+chmod +x pc-internet.sh
+sudo ./pc-internet.sh
+----
+
+Windows
+
+Add steps to share internet connection on Windows
+
+MacOS
+
+Add steps to share internet connection on MacOS
+
+==== UART serial debug connection
+
+. Connect the rpi debug probe to the 3-pin JST-SH connector on the board.
+. Connect the other end of the probe to the PC.
+. Use command line utility like [.title-ref]#tio# with default setting or a serial console application (e.g. Putty) to accress your board.
+. You will see the boot log and can access the board console.
+
+[source,bash]
+----
+[16:26:36.870] tio dddb5a9-dirty
+[16:26:36.870] Press ctrl-t q to qutt
+[16:26:36.871] Connected to /dev/ttyACMO
+Core: 87 devices, 29 uclasses, devicetree: separate
+MMC: mmc@fal10000: 0, mmc@fadO000: 1
+Loading Environment from nowhere... OK
+In: serial@2860000
+LOTT oes serial@2860000
+Err: serial@2860000
+Net: No ethernet found.
+Press SPACE to abort autoboot in 2 seconds
+Scanning for bootflows in all bootdevs
+Seq Method State Uclass Part Name ee iC it
+Scanning bootdev '‘mmc@fa00000.bootdev':
+
+® extlinux iar; \0)\ 1 mmc@fa0000.bootdev.part_ /extlinux/extlinux. conf
+** Booting bootflow ‘mmc@fa00000.bootdev.part_1' with extlinux
+PocketBeagle 2 microSD (extlinux.conf) (swap enabled)
+es microSD (debug)
+oa microSD (default)
+Enter choice: 2: microSD (default)
+Retrieving file: /Image
+append: console=ttyS2,115200n8 root=/dev/mmcblkip3 ro rootfstype=ext4 resume=/dev/mmcblkip2 rootwait net.ifnames=0 quiet
+Retrieving file: /ti/k3-am6232-pocketbeagle2.dtb
+## Flattened Device Tree blob at 88000000
+
+Booting using the fdt blob at 0x88000000
+Working FDT set to 88000000
+Loading Device Tree to 000000008ffec000, end OOOOOOOO8TTTT666 ... OK
+
+Working FDT set to 8ffec000
+Starting kernel ...
+----
+
+=== Cape Connection
+
+In this scenario, the board is connected to a cape like https://www.beagleboard.org/boards/techlab[TechLab Cape] or https://www.beagleboard.org/boards/pocketbeagle-gamepup-cape[GamePup Cape]. This is the most common way to use the board for sensor interfacing, USB host, LEDs and Buttons.
+
+Add cape connection diagram and steps to use examples.
